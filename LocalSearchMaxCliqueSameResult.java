@@ -4,20 +4,27 @@ import java.util.Set;
 public class LocalSearchMaxCliqueSameResult {
     
     public static Set<Integer> localSearchMaxClique(Graph graph) {
-        // Inicialización
-        Set<Integer> currentClique = new HashSet<>();
-        
-        // Comenzar con el primer vértice
-        currentClique.add(0);
-        
-        // Intentar agregar todos los vértices restantes conectados a este vértice
-        for (int v = 1; v < graph.getVertexCount(); v++) {
-            if (graph.hasEdge(0, v)) {
-                currentClique.add(v);
-            }
+        // Generar un conjunto de vértices candidatos
+        Set<Integer> candidates = new HashSet<>();
+        for (int v = 0; v < graph.getVertexCount(); v++) {
+        candidates.add(v);
         }
-        
-        return currentClique;
+        // Implementar un algoritmo de búsqueda
+        Set<Integer> bestClique = null;
+        for (int v : candidates) {
+        Set<Integer> currentClique = new HashSet<>();
+        currentClique.add(v);
+          // Búsqueda por anchura, profundidad o local
+            for (int u : candidates) {
+                if (graph.hasEdge(u, v)) {
+                currentClique.add(u);
+                }
+            }
+        if (bestClique == null || bestClique.size() < currentClique.size()) {
+            bestClique = currentClique;
+        }
+        }
+        return bestClique;
     }
 
     // Clase Graph (simplificada)
@@ -47,24 +54,32 @@ public class LocalSearchMaxCliqueSameResult {
     // Ejemplo de uso
     public static void main(String[] args) {
         // Crear un grafo de ejemplo
-        Graph graph = new Graph(6);
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(0, 3);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 3);
+        Graph graph = new Graph(11);
+        /*graph.addEdge(1, 2);
+        graph.addEdge(2, 5);
         graph.addEdge(3, 4);
-        graph.addEdge(0, 4);
-        graph.addEdge(1, 4);
-        graph.addEdge(2, 4);
+        graph.addEdge(6, 4);
+        graph.addEdge(1, 5); Prueba Uno Superada*/ 
+        
+
+        graph.addEdge(1, 3);
+        graph.addEdge(1, 5);
+        graph.addEdge(2, 8);
+        graph.addEdge(3, 2);
+        graph.addEdge(3, 5);
         graph.addEdge(3, 4);
+        graph.addEdge(3, 6);
         graph.addEdge(5, 4);
-        graph.addEdge(5, 1);
-        graph.addEdge(5, 2);
-        graph.addEdge(5, 3);
-        graph.addEdge(5, 0);
-
-
+        graph.addEdge(5, 6);
+        graph.addEdge(5, 9);
+        graph.addEdge(5, 7);
+        graph.addEdge(4, 6);
+        graph.addEdge(4, 2);
+        graph.addEdge(8, 7);
+        graph.addEdge(8, 6);
+        graph.addEdge(7, 6);
+        graph.addEdge(8, 9);
+        graph.addEdge(9, 7);
         
         // Encontrar el clique máximo
         Set<Integer> maxClique = localSearchMaxClique(graph);
