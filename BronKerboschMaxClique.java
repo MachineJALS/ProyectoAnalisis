@@ -18,8 +18,8 @@ public class BronKerboschMaxClique {
 
     private static void bronKerbosch(Graph graph, Set<Integer> clique, Set<Integer> candidates, Set<Integer> excluded) {
         if (candidates.isEmpty() && excluded.isEmpty()) {
-            if (clique.size() > 2) {
-                System.out.println("Clique: " + clique); // Solo para depuración
+            if (clique.size() > maxClique.size()) {
+                maxClique = new HashSet<>(clique);
             }
             return;
         }
@@ -67,10 +67,19 @@ public class BronKerboschMaxClique {
         }
     }
 
+    static Set<Integer> maxClique = new HashSet<>();
+
     public static void main(String[] args) {
         // Crear un grafo de ejemplo
-        Graph graph = new Graph(10);
-        graph.addEdge(1, 3);
+        Graph graph = new Graph(7);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 5);
+        graph.addEdge(3, 4);
+        graph.addEdge(6, 4);
+        graph.addEdge(1, 5);
+        //Prueba uno Superada
+
+        /*graph.addEdge(1, 3);
         graph.addEdge(1, 5);
         graph.addEdge(2, 8);
         graph.addEdge(3, 2);
@@ -88,9 +97,10 @@ public class BronKerboschMaxClique {
         graph.addEdge(7, 6);
         graph.addEdge(8, 9);
         graph.addEdge(9, 7);
+        Prueba dos Superada*/
 
         // Encontrar el clique máximo
-        Set<Integer> maxClique = bronKerbosch(graph);
+        bronKerbosch(graph);
         System.out.println("Clique Máximo: " + maxClique);
     }
 }
