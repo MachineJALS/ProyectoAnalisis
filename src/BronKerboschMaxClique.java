@@ -106,6 +106,44 @@ public class BronKerboschMaxClique {
         // grafoDos.addEdge(6, 8);
         // bronKerbosch(grafoDos);
         // System.out.println("Clique Máximo: " + maxClique); 
-        //Resultado esperado = [0,1,3,4] - Funcionó correctamente
+         //Resultado esperado = [0,1,3,4] - Funcionó correctamente
+
+        //Tercera prueba del proyecto de Análisis de Algoritmos
+        //En este momento se ejecutarán 20 vértices con 20 aristas
+
+        Graph grafoTres = new Graph(20);
+        grafoTres.addEdge(0, 1);
+        grafoTres.addEdge(0, 2);
+        grafoTres.addEdge(0, 3);
+        grafoTres.addEdge(0, 4);
+        grafoTres.addEdge(1, 2);
+        grafoTres.addEdge(1, 3);
+        grafoTres.addEdge(1, 4);
+        grafoTres.addEdge(1, 5);
+        grafoTres.addEdge(2, 3);
+        grafoTres.addEdge(2, 4);
+        grafoTres.addEdge(2, 5);
+        grafoTres.addEdge(2, 6);
+        grafoTres.addEdge(3, 4);
+        grafoTres.addEdge(3, 5);
+        grafoTres.addEdge(3, 6);
+        grafoTres.addEdge(3, 7);
+        grafoTres.addEdge(4, 5);
+        grafoTres.addEdge(4, 6);
+        grafoTres.addEdge(4, 7);
+        grafoTres.addEdge(4, 8);
+        grafoTres.addEdge(5, 6);
+        grafoTres.addEdge(5, 7);
+        grafoTres.addEdge(5, 8);
+        grafoTres.addEdge(5, 9);
+        grafoTres.addEdge(6, 7);
+        grafoTres.addEdge(6, 8);
+        grafoTres.addEdge(6, 9);
+        grafoTres.addEdge(7, 8);
+        grafoTres.addEdge(7, 9);
+        grafoTres.addEdge(8, 9);
+        bronKerbosch(grafoTres);
+        System.out.println("Clique Máximo: " + maxClique); 
+
     }
 }
