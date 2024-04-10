@@ -71,36 +71,41 @@ public class BronKerboschMaxClique {
 
     public static void main(String[] args) {
         // Crear un grafo de ejemplo
-        Graph graph = new Graph(7);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 5);
-        graph.addEdge(3, 4);
-        graph.addEdge(6, 4);
-        graph.addEdge(1, 5);
-        //Prueba uno Superada
+        Graph grafoUno = new Graph(5);
 
-        /*graph.addEdge(1, 3);
-        graph.addEdge(1, 5);
-        graph.addEdge(2, 8);
-        graph.addEdge(3, 2);
-        graph.addEdge(3, 5);
-        graph.addEdge(3, 4);
-        graph.addEdge(3, 6);
-        graph.addEdge(5, 4);
-        graph.addEdge(5, 6);
-        graph.addEdge(5, 9);
-        graph.addEdge(5, 7);
-        graph.addEdge(4, 6);
-        graph.addEdge(4, 2);
-        graph.addEdge(8, 7);
-        graph.addEdge(8, 6);
-        graph.addEdge(7, 6);
-        graph.addEdge(8, 9);
-        graph.addEdge(9, 7);
-        Prueba dos Superada*/
+        // En este momento se ejecutaran 5 vertices con 6 aristas
+        // grafoUno.addEdge(0, 1);
+        // grafoUno.addEdge(0, 2);
+        // grafoUno.addEdge(0, 3);
+        // grafoUno.addEdge(1, 2);
+        // grafoUno.addEdge(1, 3);
+        // grafoUno.addEdge(2, 3);
+        // Se espera un clique de [0, 1, 2, 3] - Resultado Correcto
+
+
+        
 
         // Encontrar el clique máximo
-        bronKerbosch(graph);
-        System.out.println("Clique Máximo: " + maxClique);
+        // bronKerbosch(grafoUno);
+        // System.out.println("Clique Máximo: " + maxClique);
+
+
+        // En este momento se ejecutaran 10 vertices con 12 aristas
+        // Graph grafoDos = new Graph(10);
+        // grafoDos.addEdge(0, 1);
+        // grafoDos.addEdge(0, 3);
+        // grafoDos.addEdge(0, 4);
+        // grafoDos.addEdge(1, 2);
+        // grafoDos.addEdge(1, 3);
+        // grafoDos.addEdge(1, 4);
+        // grafoDos.addEdge(3, 4);
+        // grafoDos.addEdge(3, 6);
+        // grafoDos.addEdge(4, 7);
+        // grafoDos.addEdge(5, 8);
+        // grafoDos.addEdge(6, 7);
+        // grafoDos.addEdge(6, 8);
+        // bronKerbosch(grafoDos);
+        // System.out.println("Clique Máximo: " + maxClique); 
+        //Resultado esperado = [0,1,3,4] - Funcionó correctamente
     }
 }

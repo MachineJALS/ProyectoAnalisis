@@ -4,10 +4,13 @@ import java.util.Set;
 public class LocalSearchMaxCliqueSameResult {
 
     public static Set<Integer> localSearchMaxClique(Graph graph) {
-        Set<Integer> candidates = new HashSet<>();
+        int asiganciones = 0;
+        int comparaciones = 0;
+        Set<Integer> candidates = new HashSet<>(); asiganciones++;
         for (int v = 0; v < graph.getCantidadDeVertices(); v++) {
             candidates.add(v);
         }
+
 
         Set<Integer> bestClique = null;
 
@@ -63,53 +66,83 @@ public class LocalSearchMaxCliqueSameResult {
 
     // Ejemplo de uso
     public static void main(String[] args) {
-        // Crear un grafo de ejemplo
-        Graph graph = new Graph(7);
-        // graph.agregarConexion(1, 2);
-        // graph.agregarConexion(2, 5);
-        // graph.agregarConexion(3, 4);
-        // graph.agregarConexion(6, 4);
-        // graph.agregarConexion(1, 5); //Prueba Uno //Superada*/
+        // Primera Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoUno = new Graph(5);
 
+        // En este momento se ejecutaran 5 vertices con 6 aristas
+        grafoUno.agregarConexion(0, 1);
+        grafoUno.agregarConexion(0, 2);
+        grafoUno.agregarConexion(0, 3);
+        grafoUno.agregarConexion(1, 2);
+        grafoUno.agregarConexion(1, 3);
+        grafoUno.agregarConexion(2, 3);
+        // Se espera un clique de [0, 1, 2, 3] - Resultado Correcto
         
-        // graph.agregarConexion(1, 3);
-        // graph.agregarConexion(1, 5);
-        // graph.agregarConexion(2, 8);
-        // graph.agregarConexion(3, 2);
-        // graph.agregarConexion(3, 5);
-        // graph.agregarConexion(3, 4);
-        // graph.agregarConexion(3, 6);
-        // graph.agregarConexion(5, 4);
-        // graph.agregarConexion(5, 6);
-        // graph.agregarConexion(5, 9);
-        // graph.agregarConexion(5, 7);
-        // graph.agregarConexion(4, 6);
-        // graph.agregarConexion(4, 2);
-        // graph.agregarConexion(8, 7);
-        // graph.agregarConexion(8, 6);
-        // graph.agregarConexion(7, 6);
-        // graph.agregarConexion(8, 9);
-        // graph.agregarConexion(9, 7);
-        
-
-        //  graph.agregarConexion(1,2);
-        //  graph.agregarConexion(2,3);
-        //  graph.agregarConexion(3,1);
-        //  graph.agregarConexion(3,4);
-        // Otra prueba superada
+        // Encontrar el clique máximo
+        Set<Integer> maxClique = localSearchMaxClique(grafoUno);
+        System.out.println("Clique Máximo del primer ejercicio: " + maxClique);
 
 
-        graph.agregarConexion(0, 1);
-        graph.agregarConexion(0, 2);
-        graph.agregarConexion(0, 3);
-        graph.agregarConexion(1, 2);
-        graph.agregarConexion(1, 3);
-        
 
 
+        // Segunda Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutaran 10 vertices con 12 aristas
+        Graph grafoDos = new Graph(10);
+        grafoDos.agregarConexion(0, 1);
+        grafoDos.agregarConexion(0, 3);
+        grafoDos.agregarConexion(0, 4);
+        grafoDos.agregarConexion(1, 2);
+        grafoDos.agregarConexion(1, 3);
+        grafoDos.agregarConexion(1, 4);
+        grafoDos.agregarConexion(3, 4);
+        grafoDos.agregarConexion(3, 6);
+        grafoDos.agregarConexion(4, 7);
+        grafoDos.agregarConexion(5, 8);
+        grafoDos.agregarConexion(6, 7);
+        grafoDos.agregarConexion(6, 8);
+        // Se espera un clique de [0, 1, 3, 4] - Resultado Correcto
 
         // Encontrar el clique máximo
-        Set<Integer> maxClique = localSearchMaxClique(graph);
-        System.out.println("Clique Máximo: " + maxClique);
+        maxClique = localSearchMaxClique(grafoDos);
+        System.out.println("Clique Máximo del Segundo Ejercicio ejercicio: " + maxClique);
+
+        // Tercera Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutaran 20 vertices con 20 aristas
+
+        Graph grafoTres = new Graph(20);
+        grafoTres.agregarConexion(0, 1);
+        grafoTres.agregarConexion(0, 2);
+        grafoTres.agregarConexion(0, 3);
+        grafoTres.agregarConexion(0, 4);
+        grafoTres.agregarConexion(1, 2);
+        grafoTres.agregarConexion(1, 3);
+        grafoTres.agregarConexion(1, 4);
+        grafoTres.agregarConexion(1, 5);
+        grafoTres.agregarConexion(2, 3);
+        grafoTres.agregarConexion(2, 4);
+        grafoTres.agregarConexion(2, 5);
+        grafoTres.agregarConexion(2, 6);
+        grafoTres.agregarConexion(3, 4);
+        grafoTres.agregarConexion(3, 5);
+        grafoTres.agregarConexion(3, 6);
+        grafoTres.agregarConexion(3, 7);
+        grafoTres.agregarConexion(4, 5);
+        grafoTres.agregarConexion(4, 6);
+        grafoTres.agregarConexion(4, 7);
+        grafoTres.agregarConexion(4, 8);
+        grafoTres.agregarConexion(5, 6);
+        grafoTres.agregarConexion(5, 7);
+        grafoTres.agregarConexion(5, 8);
+        grafoTres.agregarConexion(5, 9);
+        grafoTres.agregarConexion(6, 7);
+        grafoTres.agregarConexion(6, 8);
+        grafoTres.agregarConexion(6, 9);
+        grafoTres.agregarConexion(7, 8);
+        grafoTres.agregarConexion(7, 9);
+        grafoTres.agregarConexion(8, 9);
+
+        maxClique = localSearchMaxClique(grafoTres);
+        System.out.println("Clique Máximo del Segundo Ejercicio ejercicio: " + maxClique);
+
     }
 }
