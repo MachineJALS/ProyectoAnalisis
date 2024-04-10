@@ -132,16 +132,7 @@ public class BronKerboschMaxClique {
         grafoTres.addEdge(4, 6);
         grafoTres.addEdge(4, 7);
         grafoTres.addEdge(4, 8);
-        grafoTres.addEdge(5, 6);
-        grafoTres.addEdge(5, 7);
-        grafoTres.addEdge(5, 8);
-        grafoTres.addEdge(5, 9);
-        grafoTres.addEdge(6, 7);
-        grafoTres.addEdge(6, 8);
-        grafoTres.addEdge(6, 9);
-        grafoTres.addEdge(7, 8);
-        grafoTres.addEdge(7, 9);
-        grafoTres.addEdge(8, 9);
+        
         bronKerbosch(grafoTres);
         System.out.println("Clique Máximo: " + maxClique); 
 
