@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+//TODO implementar las asignaciones y comparaciones en el algoritmo de BronKerbosch ademas
+//TODO Que se puedan buscar cliques sin necesidad de comentar los anteriores grafos
 
 public class BronKerboschMaxClique {
     
