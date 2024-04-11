@@ -10,6 +10,7 @@ public class Main {
         // Apartado de LocalSearchMaxCliqueSameResult
         Graph grafoUno = new Graph(5);
 
+        // Primer Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 5 vertices con 6 aristas
         grafoUno.agregarConexion(0, 1);
         grafoUno.agregarConexion(0, 2);
@@ -23,6 +24,9 @@ public class Main {
         Set<Integer> maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoUno);
         System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
 
+
+        // Segunda Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutaran 10 vertices con 12 aristas
         Graph grafoDos = new Graph(10);
         grafoDos.agregarConexion(0, 1);
         grafoDos.agregarConexion(0, 3);
@@ -39,7 +43,7 @@ public class Main {
         // Se espera un clique de [0, 1, 3, 4] - Resultado Correcto
 
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoDos);
-        System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
+        System.out.println("Clique Máximo del Segundo ejercicio método Busqueda Local: " + maxClique);
 
         // Tercera Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 20 aristas
@@ -78,7 +82,7 @@ public class Main {
         // Se espera un clique de [0, 1, 2, 3, 4] - Resultado Correcto
 
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoTres);
-        System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
+        System.out.println("Clique Máximo del tercer ejercicio método Busqueda Local: " + maxClique);
 
         // Cuarta Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 30 aristas
@@ -116,7 +120,7 @@ public class Main {
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6] - Resultado Correcto
 
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoCuatro);
-        System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
+        System.out.println("Clique Máximo del cuarto ejercicio método Busqueda Local: " + maxClique);
 
         // Cuarta Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 40 aristas
@@ -185,7 +189,7 @@ public class Main {
 
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoCinco);
-        System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
+        System.out.println("Clique Máximo del quinto ejercicio método Busqueda Local: " + maxClique);
 
 
         // Sexta Prueba del Proyecto Analisis de Algoritmos
@@ -331,200 +335,75 @@ public class Main {
         grafoSeis.agregarConexion(19, 14);
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoSeis);
-        System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
+        System.out.println("Clique Máximo del sexto ejercicio método Busqueda Local: " + maxClique);
 
 
         // Septima Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 80 aristas
-        // Agregando conexiones para el clique de 18 nodos (0-17)
         Graph grafoSiete = new Graph(20);
-        // Agregando conexiones para el clique de 18 nodos (0-17)
-        grafoSiete.agregarConexion(0, 1);
-        grafoSiete.agregarConexion(0, 2);
-        grafoSiete.agregarConexion(0, 3);
-        grafoSiete.agregarConexion(0, 4);
-        grafoSiete.agregarConexion(0, 5);
-        grafoSiete.agregarConexion(0, 6);
-        grafoSiete.agregarConexion(0, 7);
-        grafoSiete.agregarConexion(0, 8);
-        grafoSiete.agregarConexion(0, 9);
-        grafoSiete.agregarConexion(0, 10);
-        grafoSiete.agregarConexion(0, 11);
-        grafoSiete.agregarConexion(0, 12);
-        grafoSiete.agregarConexion(0, 13);
-        grafoSiete.agregarConexion(0, 14);
-        grafoSiete.agregarConexion(0, 15);
-        grafoSiete.agregarConexion(0, 16);
-        grafoSiete.agregarConexion(0, 17);
-        grafoSiete.agregarConexion(1, 2);
-        grafoSiete.agregarConexion(1, 3);
-        grafoSiete.agregarConexion(1, 4);
-        grafoSiete.agregarConexion(1, 5);
-        grafoSiete.agregarConexion(1, 6);
-        grafoSiete.agregarConexion(1, 7);
-        grafoSiete.agregarConexion(1, 8);
-        grafoSiete.agregarConexion(1, 9);
-        grafoSiete.agregarConexion(1, 10);
-        grafoSiete.agregarConexion(1, 11);
-        grafoSiete.agregarConexion(1, 12);
-        grafoSiete.agregarConexion(1, 13);
-        grafoSiete.agregarConexion(1, 14);
-        grafoSiete.agregarConexion(1, 15);
-        grafoSiete.agregarConexion(1, 16);
-        grafoSiete.agregarConexion(1, 17);
-        grafoSiete.agregarConexion(2, 3);
-        grafoSiete.agregarConexion(2, 4);
-        grafoSiete.agregarConexion(2, 5);
-        grafoSiete.agregarConexion(2, 6);
-        grafoSiete.agregarConexion(2, 7);
-        grafoSiete.agregarConexion(2, 8);
-        grafoSiete.agregarConexion(2, 9);
-        grafoSiete.agregarConexion(2, 10);
-        grafoSiete.agregarConexion(2, 11);
-        grafoSiete.agregarConexion(2, 12);
-        grafoSiete.agregarConexion(2, 13);
-        grafoSiete.agregarConexion(2, 14);
-        grafoSiete.agregarConexion(2, 15);
-        grafoSiete.agregarConexion(2, 16);
-        grafoSiete.agregarConexion(2, 17);
-        grafoSiete.agregarConexion(3, 4);
-        grafoSiete.agregarConexion(3, 5);
-        grafoSiete.agregarConexion(3, 6);
-        grafoSiete.agregarConexion(3, 7);
-        grafoSiete.agregarConexion(3, 8);
-        grafoSiete.agregarConexion(3, 9);
-        grafoSiete.agregarConexion(3, 10);
-        grafoSiete.agregarConexion(3, 11);
-        grafoSiete.agregarConexion(3, 12);
-        grafoSiete.agregarConexion(3, 13);
-        grafoSiete.agregarConexion(3, 14);
-        grafoSiete.agregarConexion(3, 15);
-        grafoSiete.agregarConexion(3, 16);
-        grafoSiete.agregarConexion(3, 17);
-        grafoSiete.agregarConexion(4, 5);
-        grafoSiete.agregarConexion(4, 6);
-        grafoSiete.agregarConexion(4, 7);
-        grafoSiete.agregarConexion(4, 8);
-        grafoSiete.agregarConexion(4, 9);
-        grafoSiete.agregarConexion(4, 10);
-        grafoSiete.agregarConexion(4, 11);
-        grafoSiete.agregarConexion(4, 12);
-        grafoSiete.agregarConexion(4, 13);
-        grafoSiete.agregarConexion(4, 14);
-        grafoSiete.agregarConexion(4, 15);
-        grafoSiete.agregarConexion(4, 16);
-        grafoSiete.agregarConexion(4, 17);
-        grafoSiete.agregarConexion(5, 6);
-        grafoSiete.agregarConexion(5, 7);
-        grafoSiete.agregarConexion(5, 8);
-        grafoSiete.agregarConexion(5, 9);
-        grafoSiete.agregarConexion(5, 10);
-        grafoSiete.agregarConexion(5, 11);
-        grafoSiete.agregarConexion(5, 12);
-        grafoSiete.agregarConexion(5, 13);
-        grafoSiete.agregarConexion(5, 14);
-        grafoSiete.agregarConexion(5, 15);
-        grafoSiete.agregarConexion(5, 16);
-        grafoSiete.agregarConexion(5, 17);
-        grafoSiete.agregarConexion(6, 7);
-        grafoSiete.agregarConexion(6, 8);
-        grafoSiete.agregarConexion(6, 9);
-        grafoSiete.agregarConexion(6, 10);
-        grafoSiete.agregarConexion(6, 11);
-        grafoSiete.agregarConexion(6, 12);
-        grafoSiete.agregarConexion(6, 13);
-        grafoSiete.agregarConexion(6, 14);
-        grafoSiete.agregarConexion(6, 15);
-        grafoSiete.agregarConexion(6, 16);
-        grafoSiete.agregarConexion(6, 17);
-        grafoSiete.agregarConexion(7, 8);
-        grafoSiete.agregarConexion(7, 9);
-        grafoSiete.agregarConexion(7, 10);
-        grafoSiete.agregarConexion(7, 11);
-        grafoSiete.agregarConexion(7, 12);
-        grafoSiete.agregarConexion(7, 13);
-        grafoSiete.agregarConexion(7, 14);
-        grafoSiete.agregarConexion(7, 15);
-        grafoSiete.agregarConexion(7, 16);
-        grafoSiete.agregarConexion(7, 17);
-        grafoSiete.agregarConexion(8, 9);
-        grafoSiete.agregarConexion(8, 10);
-        grafoSiete.agregarConexion(8, 11);
-        grafoSiete.agregarConexion(8, 12);
-        grafoSiete.agregarConexion(8, 13);
-        grafoSiete.agregarConexion(8, 14);
-        grafoSiete.agregarConexion(8, 15);
-        grafoSiete.agregarConexion(8, 16);
-        grafoSiete.agregarConexion(8, 17);
-        grafoSiete.agregarConexion(9, 10);
-        grafoSiete.agregarConexion(9, 11);
-        grafoSiete.agregarConexion(9, 12);
-        grafoSiete.agregarConexion(9, 13);
-        grafoSiete.agregarConexion(9, 14);
-        grafoSiete.agregarConexion(9, 15);
-        grafoSiete.agregarConexion(9, 16);
-        grafoSiete.agregarConexion(9, 17);
-        grafoSiete.agregarConexion(10, 11);
-        grafoSiete.agregarConexion(10, 12);
-        grafoSiete.agregarConexion(10, 13);
-        grafoSiete.agregarConexion(10, 14);
-        grafoSiete.agregarConexion(10, 15);
-        grafoSiete.agregarConexion(10, 16);
-        grafoSiete.agregarConexion(10, 17);
-        grafoSiete.agregarConexion(11, 12);
-        grafoSiete.agregarConexion(11, 13);
-        grafoSiete.agregarConexion(11, 14);
-        grafoSiete.agregarConexion(11, 15);
-        grafoSiete.agregarConexion(11, 16);
-        grafoSiete.agregarConexion(11, 17);
-        grafoSiete.agregarConexion(12, 13);
-        grafoSiete.agregarConexion(12, 14);
-        grafoSiete.agregarConexion(12, 15);
-        grafoSiete.agregarConexion(12, 16);
-        grafoSiete.agregarConexion(12, 17);
-        grafoSiete.agregarConexion(13, 14);
-        grafoSiete.agregarConexion(13, 15);
-        grafoSiete.agregarConexion(13, 16);
-        grafoSiete.agregarConexion(13, 17);
-        grafoSiete.agregarConexion(14, 15);
-        grafoSiete.agregarConexion(14, 16);
-        grafoSiete.agregarConexion(14, 17);
-        grafoSiete.agregarConexion(15, 16);
-        grafoSiete.agregarConexion(15, 17);
-        grafoSiete.agregarConexion(16, 17);
+        // Agregando conexiones para el clique de 18 nodos (0-12)
+        for (int i = 0; i < 13; i++) {
+            for (int j = i + 1; j < 13; j++) {
+                grafoSiete.agregarConexion(i,j);
+            }
+        }
+        // En este momento tenemos un clique de 13 nodos (0-12) con 78 aristas
 
         // Ahora, agregamos conexiones adicionales para alcanzar un total de 80 aristas
         // Aquí agregamos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
-        grafoSiete.agregarConexion(18, 0);
-        grafoSiete.agregarConexion(18, 1);
-        grafoSiete.agregarConexion(18, 2);
-        grafoSiete.agregarConexion(18, 3);
-        grafoSiete.agregarConexion(18, 4);
-        grafoSiete.agregarConexion(18, 5);
-        grafoSiete.agregarConexion(18, 6);
-        grafoSiete.agregarConexion(18, 7);
-        grafoSiete.agregarConexion(19, 0);
-        grafoSiete.agregarConexion(19, 1);
-        grafoSiete.agregarConexion(19, 2);
-        grafoSiete.agregarConexion(19, 3);
-        grafoSiete.agregarConexion(19, 4);
-        grafoSiete.agregarConexion(19, 5);
-        grafoSiete.agregarConexion(19, 6);
-        grafoSiete.agregarConexion(19, 7);
+        grafoSiete.agregarConexion(13,14);
+        grafoSiete.agregarConexion(18,15);
 
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoSiete);
-        System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
-
+        System.out.println("Clique Máximo del Septimo ejercicio método Busqueda Local: " + maxClique);
 
         // Octava Prueba del Proyecto Analisis de Algoritmos
-        
+        // En este momento se ejecutaran 40 vertices con 120 aristas
+        // Agregando conexiones para el clique de 15 nodos (0-14)
+        Graph grafoOcho = new Graph(40);
+        for (int i = 0; i < 15; i++) {
+            for (int j = i + 1; j < 15; j++) {
+                grafoOcho.agregarConexion(i, j);
+            }
+        }
+
+        grafoOcho.agregarConexion(15, 16);
+        grafoOcho.agregarConexion(15, 17);
+        grafoOcho.agregarConexion(15, 18);
+        grafoOcho.agregarConexion(15, 19);
+        grafoOcho.agregarConexion(16, 17);
+        grafoOcho.agregarConexion(16, 18);
+        grafoOcho.agregarConexion(16, 19);
+        grafoOcho.agregarConexion(17, 18);
+        grafoOcho.agregarConexion(17, 19);
+        grafoOcho.agregarConexion(18, 19);
+        grafoOcho.agregarConexion(19, 20);
+        grafoOcho.agregarConexion(19, 21);
+        grafoOcho.agregarConexion(19, 22);
+        grafoOcho.agregarConexion(19, 23);
+        grafoOcho.agregarConexion(19, 24);
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
+
+
+        maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoOcho);
+        System.out.println("Clique Máximo del Octava ejercicio método Busqueda Local: " + maxClique);
+
+
 
         // Novena Prueba del Proyecto Analisis de Algoritmos
+
 
         // Decima Prueba del Proyecto Analisis de Algoritmos
 
 
+
+
+
+
+
+
+        
 
     //--------------------------------------------------------------------------------------------------------------
         // Apartado de BronKerboschMaxClique
