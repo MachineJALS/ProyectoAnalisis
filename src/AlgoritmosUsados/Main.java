@@ -194,15 +194,17 @@ public class Main {
 
         // Sexta Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 50 aristas
-        // Agregando conexiones para el clique de 15 nodos (0-14)
+        // Agregando conexiones para el clique de 7 nodos (0-6)
         Graph grafoSeis = new Graph(20);
-        grafoSeis.agregarConexion(0, 1);
-        grafoSeis.agregarConexion(0, 2);
-        grafoSeis.agregarConexion(0, 3);
-        grafoSeis.agregarConexion(0, 4);
-        grafoSeis.agregarConexion(0, 5);
-        grafoSeis.agregarConexion(0, 6);
-        grafoSeis.agregarConexion(0, 7);
+        for (int i = 0; i < 7; i++) {
+            for (int j = i + 1; j < 7; j++) {
+                grafoSeis.agregarConexion(i, j);
+            }
+        }
+        
+        // Ahora, agregamos conexiones adicionales para alcanzar un total de 50 aristas
+        // Estas conexiones pueden ser entre nodos del clique o entre nodos del clique y nodos externos
+        // Aquí añadimos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
         grafoSeis.agregarConexion(0, 8);
         grafoSeis.agregarConexion(0, 9);
         grafoSeis.agregarConexion(0, 10);
@@ -210,12 +212,6 @@ public class Main {
         grafoSeis.agregarConexion(0, 12);
         grafoSeis.agregarConexion(0, 13);
         grafoSeis.agregarConexion(0, 14);
-        grafoSeis.agregarConexion(1, 2);
-        grafoSeis.agregarConexion(1, 3);
-        grafoSeis.agregarConexion(1, 4);
-        grafoSeis.agregarConexion(1, 5);
-        grafoSeis.agregarConexion(1, 6);
-        grafoSeis.agregarConexion(1, 7);
         grafoSeis.agregarConexion(1, 8);
         grafoSeis.agregarConexion(1, 9);
         grafoSeis.agregarConexion(1, 10);
@@ -223,12 +219,6 @@ public class Main {
         grafoSeis.agregarConexion(1, 12);
         grafoSeis.agregarConexion(1, 13);
         grafoSeis.agregarConexion(1, 14);
-        // Se repiten las conexiones para el nodo 1, con los demas nodos
-        grafoSeis.agregarConexion(2, 3);
-        grafoSeis.agregarConexion(2, 4);
-        grafoSeis.agregarConexion(2, 5);
-        grafoSeis.agregarConexion(2, 6);
-        grafoSeis.agregarConexion(2, 7);
         grafoSeis.agregarConexion(2, 8);
         grafoSeis.agregarConexion(2, 9);
         grafoSeis.agregarConexion(2, 10);
@@ -236,11 +226,6 @@ public class Main {
         grafoSeis.agregarConexion(2, 12);
         grafoSeis.agregarConexion(2, 13);
         grafoSeis.agregarConexion(2, 14);
-        // Se repiten las conexiones para el nodo 2, con los demas nodos
-        grafoSeis.agregarConexion(3, 4);
-        grafoSeis.agregarConexion(3, 5);
-        grafoSeis.agregarConexion(3, 6);
-        grafoSeis.agregarConexion(3, 7);
         grafoSeis.agregarConexion(3, 8);
         grafoSeis.agregarConexion(3, 9);
         grafoSeis.agregarConexion(3, 10);
@@ -248,92 +233,9 @@ public class Main {
         grafoSeis.agregarConexion(3, 12);
         grafoSeis.agregarConexion(3, 13);
         grafoSeis.agregarConexion(3, 14);
-        // Se repiten las conexiones para el nodo 3, con los demas nodos
-        grafoSeis.agregarConexion(4, 5);
-        grafoSeis.agregarConexion(4, 6);
-        grafoSeis.agregarConexion(4, 7);
         grafoSeis.agregarConexion(4, 8);
-        grafoSeis.agregarConexion(4, 9);
-        grafoSeis.agregarConexion(4, 10);
-        grafoSeis.agregarConexion(4, 11);
-        grafoSeis.agregarConexion(4, 12);
-        grafoSeis.agregarConexion(4, 13);
-        grafoSeis.agregarConexion(4, 14);
-        // Se repiten las conexiones para el nodo 4, con los demas nodos
-        grafoSeis.agregarConexion(5, 6);
-        grafoSeis.agregarConexion(5, 7);
-        grafoSeis.agregarConexion(5, 8);
-        grafoSeis.agregarConexion(5, 9);
-        grafoSeis.agregarConexion(5, 10);
-        grafoSeis.agregarConexion(5, 11);
-        grafoSeis.agregarConexion(5, 12);
-        grafoSeis.agregarConexion(5, 13);
-        grafoSeis.agregarConexion(5, 14);
-        // Se repiten las conexiones para el nodo 5, con los demas nodos
-        grafoSeis.agregarConexion(6, 7);
-        grafoSeis.agregarConexion(6, 8);
-        grafoSeis.agregarConexion(6, 9);
-        grafoSeis.agregarConexion(6, 10);
-        grafoSeis.agregarConexion(6, 11);
-        grafoSeis.agregarConexion(6, 12);
-        grafoSeis.agregarConexion(6, 13);
-        grafoSeis.agregarConexion(6, 14);
-        // Se repiten las conexiones para el nodo 6, con los demas nodos
-        grafoSeis.agregarConexion(7, 8);
-        grafoSeis.agregarConexion(7, 9);
-        grafoSeis.agregarConexion(7, 10);
-        grafoSeis.agregarConexion(7, 11);
-        grafoSeis.agregarConexion(7, 12);
-        grafoSeis.agregarConexion(7, 13);
-        grafoSeis.agregarConexion(7, 14);
-        // Se repiten las conexiones para el nodo 7, con los demas nodos
-        grafoSeis.agregarConexion(8, 9);
-        grafoSeis.agregarConexion(8, 10);
-        grafoSeis.agregarConexion(8, 11);
-        grafoSeis.agregarConexion(8, 12);
-        grafoSeis.agregarConexion(8, 13);
-        grafoSeis.agregarConexion(8, 14);
-        // Se repiten las conexiones para el nodo 8, con los demas nodos
-        grafoSeis.agregarConexion(9, 10);
-        grafoSeis.agregarConexion(9, 11);
-        grafoSeis.agregarConexion(9, 12);
-        grafoSeis.agregarConexion(9, 13);
-        grafoSeis.agregarConexion(9, 14);
-        // Se repiten las conexiones para el nodo 9, con los demas nodos
-        grafoSeis.agregarConexion(10, 11);
-        grafoSeis.agregarConexion(10, 12);
-        grafoSeis.agregarConexion(10, 13);
-        grafoSeis.agregarConexion(10, 14);
-        // Se repiten las conexiones para el nodo 10, con los demas nodos
-        grafoSeis.agregarConexion(11, 12);
-        grafoSeis.agregarConexion(11, 13);
-        grafoSeis.agregarConexion(11, 14);
-        // Se repiten las conexiones para el nodo 11, con los demas nodos
-        grafoSeis.agregarConexion(12, 13);
-        grafoSeis.agregarConexion(12, 14);
-        // Se repiten las conexiones para el nodo 12, con los demas nodos
-        grafoSeis.agregarConexion(13, 14);
-        // Se repiten las conexiones para el nodo 13, con los demas nodos
 
-        // Ahora, agregamos conexiones adicionales para alcanzar un total de 50 aristas
-        // Estas conexiones pueden ser entre nodos del clique o entre nodos del clique y nodos externos
-        // Aquí añadimos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
-        grafoSeis.agregarConexion(15, 0);
-        grafoSeis.agregarConexion(15, 1);
-        grafoSeis.agregarConexion(15, 2);
-        grafoSeis.agregarConexion(16, 0);
-        grafoSeis.agregarConexion(16, 3);
-        grafoSeis.agregarConexion(16, 6);
-        grafoSeis.agregarConexion(17, 0);
-        grafoSeis.agregarConexion(17, 7);
-        grafoSeis.agregarConexion(17, 9);
-        grafoSeis.agregarConexion(18, 1);
-        grafoSeis.agregarConexion(18, 2);
-        grafoSeis.agregarConexion(18, 12);
-        grafoSeis.agregarConexion(19, 4);
-        grafoSeis.agregarConexion(19, 8);
-        grafoSeis.agregarConexion(19, 14);
-        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoSeis);
         System.out.println("Clique Máximo del sexto ejercicio método Busqueda Local: " + maxClique);
 
@@ -367,7 +269,8 @@ public class Main {
                 grafoOcho.agregarConexion(i, j);
             }
         }
-
+        // En este momento tenemos un clique de 15 nodos (0-14) con 105 aristas
+        // Ahora, agregamos conexiones adicionales para alcanzar un total de 120 aristas
         grafoOcho.agregarConexion(15, 16);
         grafoOcho.agregarConexion(15, 17);
         grafoOcho.agregarConexion(15, 18);
@@ -397,13 +300,6 @@ public class Main {
         // Decima Prueba del Proyecto Analisis de Algoritmos
 
 
-
-
-
-
-
-
-        
 
     //--------------------------------------------------------------------------------------------------------------
         // Apartado de BronKerboschMaxClique
