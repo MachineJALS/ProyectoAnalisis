@@ -69,9 +69,9 @@ public class LocalSearchMaxCliqueSameResult {
         //Calculamos el tiempo de ejecución
         long durationInNano = (endTime - startTime);
         //Convertimos el tiempo de ejecución a milisegundos
-        long durationInSeconds = TimeUnit.NANOSECONDS.toSeconds(durationInNano);
+        long durantionInMillis = TimeUnit.NANOSECONDS.toMillis(durationInNano);
         //Imprimimos el tiempo de ejecución
-        System.out.println("Tiempo de ejecución: " + durationInSeconds + " segundos");
+        System.out.println("Tiempo de ejecución: " + durantionInMillis + " ms");
         return bestClique;
     }
 

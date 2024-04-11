@@ -372,7 +372,7 @@ public class Main {
         // Se espera un clique de [0, 1, 2, 3, 4] - Resultado Correcto
         
         BronKerboschMaxClique.bronKerbosch(grafoTresKerbosch);
-        System.out.println("Clique Máximo: " + BronKerboschMaxClique.maxCliqueKersboch); 
+        System.out.println("Clique Máximo del tercer ejercicio Bron - Kersboch: " + BronKerboschMaxClique.maxCliqueKersboch); 
 
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
@@ -621,7 +621,6 @@ public class Main {
         grafoDiezKerbosch.addEdge(74, 79);
         BronKerboschMaxClique.bronKerbosch(grafoDiezKerbosch);
         System.out.println("Clique Máximo del decima ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
-
     //--------------------------------------------------------------------------------------------------------------
     }
 }
