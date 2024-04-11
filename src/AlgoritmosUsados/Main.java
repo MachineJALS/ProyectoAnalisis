@@ -7,9 +7,11 @@ import AlgoritmosUsados.BronKerboschMaxClique.*;
 public class Main {
     
     public static void main(String[] args) {
+        System.out.println("");
+        System.out.println("-----------------------------------------------------------------   Apartado de Búsqueda Local   -----------------------------------------------------------------");
+
         // Apartado de LocalSearchMaxCliqueSameResult
         Graph grafoUno = new Graph(5);
-
         // Primer Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 5 vertices con 6 aristas
         grafoUno.agregarConexion(0, 1);
@@ -19,12 +21,10 @@ public class Main {
         grafoUno.agregarConexion(1, 3);
         grafoUno.agregarConexion(2, 3);
         // Se espera un clique de [0, 1, 2, 3] - Resultado Correcto
-        
         // Encontrar el clique máximo
         Set<Integer> maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoUno);
         System.out.println("Clique Máximo del primer ejercicio método Busqueda Local: " + maxClique);
-
-
+        
         // Segunda Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 10 vertices con 12 aristas
         Graph grafoDos = new Graph(10);
@@ -41,13 +41,12 @@ public class Main {
         grafoDos.agregarConexion(6, 7);
         grafoDos.agregarConexion(6, 8);
         // Se espera un clique de [0, 1, 3, 4] - Resultado Correcto
-
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoDos);
         System.out.println("Clique Máximo del Segundo ejercicio método Busqueda Local: " + maxClique);
 
+
         // Tercera Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 20 aristas
-
         Graph grafoTres = new Graph(20);
         grafoTres.agregarConexion(0, 1);
         grafoTres.agregarConexion(0, 2);
@@ -80,9 +79,9 @@ public class Main {
         grafoTres.agregarConexion(7, 9);
         grafoTres.agregarConexion(8, 9);
         // Se espera un clique de [0, 1, 2, 3, 4] - Resultado Correcto
-
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoTres);
         System.out.println("Clique Máximo del tercer ejercicio método Busqueda Local: " + maxClique);
+
 
         // Cuarta Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 30 aristas
@@ -118,80 +117,50 @@ public class Main {
         grafoCuatro.agregarConexion(11, 3);   // Otro nodo externo conectado al clique
         grafoCuatro.agregarConexion(14, 5);   // Y otro más para integrar mejor el grafo
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6] - Resultado Correcto
-
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoCuatro);
         System.out.println("Clique Máximo del cuarto ejercicio método Busqueda Local: " + maxClique);
+
 
         // Cuarta Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 40 aristas
         Graph grafoCinco = new Graph(20);
-        // Agregando conexiones para el clique de 10 nodos (0-9)
-        grafoCinco.agregarConexion(0, 1);
-        grafoCinco.agregarConexion(0, 2);
-        grafoCinco.agregarConexion(0, 3);
-        grafoCinco.agregarConexion(0, 4);
-        grafoCinco.agregarConexion(0, 5);
-        grafoCinco.agregarConexion(0, 6);
-        grafoCinco.agregarConexion(0, 7);
-        grafoCinco.agregarConexion(0, 8);
-        grafoCinco.agregarConexion(0, 9);
-        grafoCinco.agregarConexion(1, 2);
-        grafoCinco.agregarConexion(1, 3);
-        grafoCinco.agregarConexion(1, 4);
-        grafoCinco.agregarConexion(1, 5);
-        grafoCinco.agregarConexion(1, 6);
-        grafoCinco.agregarConexion(1, 7);
-        grafoCinco.agregarConexion(1, 8);
-        grafoCinco.agregarConexion(1, 9);
-        grafoCinco.agregarConexion(2, 3);
-        grafoCinco.agregarConexion(2, 4);
-        grafoCinco.agregarConexion(2, 5);
-        grafoCinco.agregarConexion(2, 6);
-        grafoCinco.agregarConexion(2, 7);
-        grafoCinco.agregarConexion(2, 8);
-        grafoCinco.agregarConexion(2, 9);
-        grafoCinco.agregarConexion(3, 4);
-        grafoCinco.agregarConexion(3, 5);
-        grafoCinco.agregarConexion(3, 6);
-        grafoCinco.agregarConexion(3, 7);
-        grafoCinco.agregarConexion(3, 8);
-        grafoCinco.agregarConexion(3, 9);
-        grafoCinco.agregarConexion(4, 5);
-        grafoCinco.agregarConexion(4, 6);
-        grafoCinco.agregarConexion(4, 7);
-        grafoCinco.agregarConexion(4, 8);
-        grafoCinco.agregarConexion(4, 9);
-        grafoCinco.agregarConexion(5, 6);
-        grafoCinco.agregarConexion(5, 7);
-        grafoCinco.agregarConexion(5, 8);
-        grafoCinco.agregarConexion(5, 9);
-        grafoCinco.agregarConexion(6, 7);
-        grafoCinco.agregarConexion(6, 8);
-        grafoCinco.agregarConexion(6, 9);
-        grafoCinco.agregarConexion(7, 8);
-        grafoCinco.agregarConexion(7, 9);
-        grafoCinco.agregarConexion(8, 9);
-
+        // Agregando conexiones para el clique de 6 nodos (3-8)
+        for (int i = 3; i < 9; i++) {
+            for (int j = i + 1; j < 9; j++) {
+                grafoCinco.agregarConexion(i, j);
+            }
+        }
         // Ahora, agregamos conexiones adicionales para alcanzar un total de 40 aristas
         // Pueden ser conexiones entre nodos del clique o entre nodos del clique y nodos externos
+        grafoCinco.agregarConexion(7, 12);
+        grafoCinco.agregarConexion(15, 18);
+        grafoCinco.agregarConexion(7, 17);
+        grafoCinco.agregarConexion(14, 17);
+        grafoCinco.agregarConexion(8, 10);
+        grafoCinco.agregarConexion(7, 13);
+        grafoCinco.agregarConexion(10, 19);
+        grafoCinco.agregarConexion(13, 16);
+        grafoCinco.agregarConexion(9, 12);
+        grafoCinco.agregarConexion(11, 9);
+        grafoCinco.agregarConexion(8, 15);
+        grafoCinco.agregarConexion(14, 19);
+        grafoCinco.agregarConexion(9, 18);
+        grafoCinco.agregarConexion(10, 15);
+        grafoCinco.agregarConexion(11, 14);
+        grafoCinco.agregarConexion(7, 19);
+        grafoCinco.agregarConexion(12, 18);
+        grafoCinco.agregarConexion(13, 17);
+        grafoCinco.agregarConexion(8, 14);
         grafoCinco.agregarConexion(10, 11);
-        grafoCinco.agregarConexion(10, 12);
-        grafoCinco.agregarConexion(11, 12);
-        grafoCinco.agregarConexion(10, 0); // Conectamos un nodo externo al clique
-        grafoCinco.agregarConexion(11, 1); // Conectamos otro nodo externo al clique
-        grafoCinco.agregarConexion(12, 2); // Conectamos otro nodo externo al clique
-        grafoCinco.agregarConexion(13, 14);
+        grafoCinco.agregarConexion(9, 17);
+        grafoCinco.agregarConexion(12, 19);
         grafoCinco.agregarConexion(13, 15);
-        grafoCinco.agregarConexion(14, 15);
-        grafoCinco.agregarConexion(13, 3); // Conectamos un nodo externo al clique
-        grafoCinco.agregarConexion(14, 4); // Conectamos otro nodo externo al clique
-        grafoCinco.agregarConexion(15, 5); // Conectamos otro nodo externo al clique
-
-        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] - Resultado Correcto
+        grafoCinco.agregarConexion(16, 10);
+        // Se espera un clique de [0, 1, 2, 3, 4, 5] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoCinco);
         System.out.println("Clique Máximo del quinto ejercicio método Busqueda Local: " + maxClique);
 
-
+        
         // Sexta Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 50 aristas
         // Agregando conexiones para el clique de 7 nodos (0-6)
@@ -201,7 +170,6 @@ public class Main {
                 grafoSeis.agregarConexion(i, j);
             }
         }
-        
         // Ahora, agregamos conexiones adicionales para alcanzar un total de 50 aristas
         // Estas conexiones pueden ser entre nodos del clique o entre nodos del clique y nodos externos
         // Aquí añadimos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
@@ -234,11 +202,9 @@ public class Main {
         grafoSeis.agregarConexion(3, 13);
         grafoSeis.agregarConexion(3, 14);
         grafoSeis.agregarConexion(4, 8);
-
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoSeis);
         System.out.println("Clique Máximo del sexto ejercicio método Busqueda Local: " + maxClique);
-
 
         // Septima Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 80 aristas
@@ -250,12 +216,10 @@ public class Main {
             }
         }
         // En este momento tenemos un clique de 13 nodos (0-12) con 78 aristas
-
         // Ahora, agregamos conexiones adicionales para alcanzar un total de 80 aristas
         // Aquí agregamos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
         grafoSiete.agregarConexion(13,14);
         grafoSiete.agregarConexion(18,15);
-
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoSiete);
         System.out.println("Clique Máximo del Septimo ejercicio método Busqueda Local: " + maxClique);
@@ -287,19 +251,68 @@ public class Main {
         grafoOcho.agregarConexion(19, 23);
         grafoOcho.agregarConexion(19, 24);
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
-
-
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoOcho);
         System.out.println("Clique Máximo del Octava ejercicio método Busqueda Local: " + maxClique);
 
 
-
         // Novena Prueba del Proyecto Analisis de Algoritmos
-
+        // En este momento se ejecutan 60 vertices con 240 aristas
+        // Agregando Conexiones para el clique de 20 nodos (19-39)
+        Graph grafoNueve = new Graph(60);
+        for (int i = 19; i < 41; i++) {
+            for (int j = i + 1; j < 41; j++) {
+                grafoNueve.agregarConexion(i, j);
+            }
+        }
+        // En este momento tenemos un clique de 22 nodos con 231 aristas
+        //Ahora agregamos las conexiones restantes 240 - 231 = 9
+        grafoNueve.agregarConexion(3, 6);
+        grafoNueve.agregarConexion(5, 8);
+        grafoNueve.agregarConexion(12, 17);
+        grafoNueve.agregarConexion(10, 14);
+        grafoNueve.agregarConexion(44, 53);
+        grafoNueve.agregarConexion(45, 58);
+        grafoNueve.agregarConexion(48, 57);
+        grafoNueve.agregarConexion(47, 59);
+        grafoNueve.agregarConexion(46, 51);
+        maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoNueve);
+        System.out.println("Clique Máximo del novena ejercicio método Busqueda Local: " + maxClique);
 
         // Decima Prueba del Proyecto Analisis de Algoritmos
-
-
+        //En este momento se realizan 80 Vertices con 400 aristas
+        // Vamos elegir un clique en este grafo de 28 nodos el cual tendra 378 aristas
+        Graph grafoDiez = new Graph(80);
+        for (int i = 10; i < 39; i++) {
+            for (int j = i + 1; j < 39; j++) {
+                grafoDiez.agregarConexion(i, j);
+            }
+        }
+        // En este momento tenemos un clique de 28 nodos con 378 aristas
+        // Ahora agregamos los nodos restantes 400 - 378 = 22
+        grafoDiez.agregarConexion(0, 2);
+        grafoDiez.agregarConexion(3, 8);
+        grafoDiez.agregarConexion(4, 9);
+        grafoDiez.agregarConexion(6, 7);
+        grafoDiez.agregarConexion(1, 5);
+        grafoDiez.agregarConexion(40, 45);
+        grafoDiez.agregarConexion(41, 46);
+        grafoDiez.agregarConexion(42, 50);
+        grafoDiez.agregarConexion(43, 55);
+        grafoDiez.agregarConexion(44, 49);
+        grafoDiez.agregarConexion(51, 58);
+        grafoDiez.agregarConexion(52, 59);
+        grafoDiez.agregarConexion(60, 65);
+        grafoDiez.agregarConexion(61, 70);
+        grafoDiez.agregarConexion(62, 66);
+        grafoDiez.agregarConexion(63, 67);
+        grafoDiez.agregarConexion(64, 68);
+        grafoDiez.agregarConexion(69, 75);
+        grafoDiez.agregarConexion(71, 76);
+        grafoDiez.agregarConexion(72, 77);
+        grafoDiez.agregarConexion(73, 78);
+        grafoDiez.agregarConexion(74, 79);
+        maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoDiez);
+        System.out.println("Clique Máximo del novena ejercicio método Busqueda Local: " + maxClique);
 
     //--------------------------------------------------------------------------------------------------------------
         // Apartado de BronKerboschMaxClique
