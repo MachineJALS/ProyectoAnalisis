@@ -68,16 +68,6 @@ public class Main {
         grafoTres.agregarConexion(4, 6);
         grafoTres.agregarConexion(4, 7);
         grafoTres.agregarConexion(4, 8);
-        grafoTres.agregarConexion(5, 6);
-        grafoTres.agregarConexion(5, 7);
-        grafoTres.agregarConexion(5, 8);
-        grafoTres.agregarConexion(5, 9);
-        grafoTres.agregarConexion(6, 7);
-        grafoTres.agregarConexion(6, 8);
-        grafoTres.agregarConexion(6, 9);
-        grafoTres.agregarConexion(7, 8);
-        grafoTres.agregarConexion(7, 9);
-        grafoTres.agregarConexion(8, 9);
         // Se espera un clique de [0, 1, 2, 3, 4] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoTres);
         System.out.println("Clique Máximo del tercer ejercicio método Busqueda Local: " + maxClique);
@@ -130,6 +120,7 @@ public class Main {
                 grafoCinco.agregarConexion(i, j);
             }
         }
+        // En este momento tenemos un clique de 6 nodos (3-8) con 15 aristas
         // Ahora, agregamos conexiones adicionales para alcanzar un total de 40 aristas
         // Pueden ser conexiones entre nodos del clique o entre nodos del clique y nodos externos
         grafoCinco.agregarConexion(7, 12);
@@ -156,7 +147,7 @@ public class Main {
         grafoCinco.agregarConexion(12, 19);
         grafoCinco.agregarConexion(13, 15);
         grafoCinco.agregarConexion(16, 10);
-        // Se espera un clique de [0, 1, 2, 3, 4, 5] - Resultado Correcto
+        // Se espera un clique de [3,4,5,6,7,8] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoCinco);
         System.out.println("Clique Máximo del quinto ejercicio método Busqueda Local: " + maxClique);
 
@@ -220,7 +211,7 @@ public class Main {
         // Aquí agregamos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
         grafoSiete.agregarConexion(13,14);
         grafoSiete.agregarConexion(18,15);
-        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] - Resultado Correcto
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] - Resultado Correcto
         maxClique = new LocalSearchMaxCliqueSameResult().localSearchMaxClique(grafoSiete);
         System.out.println("Clique Máximo del Septimo ejercicio método Busqueda Local: " + maxClique);
 
@@ -338,6 +329,23 @@ public class Main {
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
 
+        GraphKerbosch grafoDosKerbosch = new GraphKerbosch(10);
+        grafoDosKerbosch.addEdge(0, 1);
+        grafoDosKerbosch.addEdge(0, 3);
+        grafoDosKerbosch.addEdge(0, 4);
+        grafoDosKerbosch.addEdge(1, 2);
+        grafoDosKerbosch.addEdge(1, 3);
+        grafoDosKerbosch.addEdge(1, 4);
+        grafoDosKerbosch.addEdge(3, 4);
+        grafoDosKerbosch.addEdge(3, 6);
+        grafoDosKerbosch.addEdge(4, 7);
+        grafoDosKerbosch.addEdge(5, 8);
+        grafoDosKerbosch.addEdge(6, 7);
+        grafoDosKerbosch.addEdge(6, 8);
+        // Se espera un clique de [0, 1, 3, 4] - Resultado Correcto
+        BronKerboschMaxClique.bronKerbosch(grafoDosKerbosch);
+        System.out.println("Clique Máximo del segundo ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
 
         GraphKerbosch grafoTresKerbosch = new GraphKerbosch(20);
         grafoTresKerbosch.addEdge(0, 1);
@@ -360,8 +368,259 @@ public class Main {
         grafoTresKerbosch.addEdge(4, 6);
         grafoTresKerbosch.addEdge(4, 7);
         grafoTresKerbosch.addEdge(4, 8);
+        // Se espera un clique de [0, 1, 2, 3, 4] - Resultado Correcto
         
         BronKerboschMaxClique.bronKerbosch(grafoTresKerbosch);
         System.out.println("Clique Máximo: " + BronKerboschMaxClique.maxCliqueKersboch); 
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        GraphKerbosch grafoCuatroKerbosch = new GraphKerbosch(20);
+        //Cuarto Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutaran 20 vertices con 30 aristas
+        grafoCuatroKerbosch.addEdge(0, 1); //1
+        grafoCuatroKerbosch.addEdge(0, 2); //2
+        grafoCuatroKerbosch.addEdge(0, 3); //3
+        grafoCuatroKerbosch.addEdge(0, 4); //4
+        grafoCuatroKerbosch.addEdge(0, 5); //5
+        grafoCuatroKerbosch.addEdge(0, 6); //6
+        grafoCuatroKerbosch.addEdge(1, 2); //7
+        grafoCuatroKerbosch.addEdge(1, 3); //8
+        grafoCuatroKerbosch.addEdge(1, 4); //9
+        grafoCuatroKerbosch.addEdge(1, 5); //10
+        grafoCuatroKerbosch.addEdge(1, 6); //11
+        grafoCuatroKerbosch.addEdge(2, 3);  //12
+        grafoCuatroKerbosch.addEdge(2, 4); //13
+        grafoCuatroKerbosch.addEdge(2, 5); //14
+        grafoCuatroKerbosch.addEdge(2, 6);  //15
+        grafoCuatroKerbosch.addEdge(3, 4); //16
+        grafoCuatroKerbosch.addEdge(3, 5); //17
+        grafoCuatroKerbosch.addEdge(3, 6); //18
+        grafoCuatroKerbosch.addEdge(4, 5); //19
+        grafoCuatroKerbosch.addEdge(4, 6); //20
+        grafoCuatroKerbosch.addEdge(5, 6); //21
+        grafoCuatroKerbosch.addEdge(7, 8); //22
+        grafoCuatroKerbosch.addEdge(8, 9); //23
+        grafoCuatroKerbosch.addEdge(9, 10); //24
+        grafoCuatroKerbosch.addEdge(10, 7);  // Forma un pequeño ciclo entre 7, 8, 9, y 10
+        grafoCuatroKerbosch.addEdge(11, 12); //26
+        grafoCuatroKerbosch.addEdge(13, 14); //27
+        grafoCuatroKerbosch.addEdge(7, 0);    // Conectamos un nodo del ciclo al clique
+        grafoCuatroKerbosch.addEdge(11, 3);   // Otro nodo externo conectado al clique
+        grafoCuatroKerbosch.addEdge(14, 5);   // Y otro más para integrar mejor el grafo
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6] - Resultado Correcto
+
+        BronKerboschMaxClique.bronKerbosch(grafoCuatroKerbosch);
+        System.out.println("Clique Máximo del cuarto ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        GraphKerbosch grafoCincoKerbosch = new GraphKerbosch(20);
+        // Quinta Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutaran 20 vertices con 40 aristas
+        // Agregando conexiones para el clique de 6 nodos (3-8)
+        for (int i = 3; i < 9; i++) {
+            for (int j = i + 1; j < 9; j++) {
+                grafoCincoKerbosch.addEdge(i, j);
+            }
+        }
+        // Ahora, agregamos conexiones adicionales para alcanzar un total de 40 aristas
+        // Pueden ser conexiones entre nodos del clique o entre nodos del clique y nodos externos
+        grafoCincoKerbosch.addEdge(7, 12);
+        grafoCincoKerbosch.addEdge(15, 18);
+        grafoCincoKerbosch.addEdge(7, 17);
+        grafoCincoKerbosch.addEdge(14, 17);
+        grafoCincoKerbosch.addEdge(8, 10);
+        grafoCincoKerbosch.addEdge(7, 13);
+        grafoCincoKerbosch.addEdge(10, 19);
+        grafoCincoKerbosch.addEdge(13, 16);
+        grafoCincoKerbosch.addEdge(9, 12);
+        grafoCincoKerbosch.addEdge(11, 9);
+        grafoCincoKerbosch.addEdge(8, 15);
+        grafoCincoKerbosch.addEdge(14, 19);
+        grafoCincoKerbosch.addEdge(9, 18);
+        grafoCincoKerbosch.addEdge(10, 15);
+        grafoCincoKerbosch.addEdge(11, 14);
+        grafoCincoKerbosch.addEdge(7, 19);
+        grafoCincoKerbosch.addEdge(12, 18);
+        grafoCincoKerbosch.addEdge(13, 17);
+        grafoCincoKerbosch.addEdge(8, 14);
+        grafoCincoKerbosch.addEdge(10, 11);
+        grafoCincoKerbosch.addEdge(9, 17);
+        grafoCincoKerbosch.addEdge(12, 19);
+        grafoCincoKerbosch.addEdge(13, 15);
+        grafoCincoKerbosch.addEdge(16, 10);
+        // Se espera un clique de [3,4,5,6,7,8] - Resultado Correcto
+        BronKerboschMaxClique.bronKerbosch(grafoCincoKerbosch);
+        System.out.println("Clique Máximo del quinto ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        GraphKerbosch grafoSeisKerbosch = new GraphKerbosch(20);
+        // En este momento se ejecutaran 20 vertices con 50 aristas
+        // Agregando conexiones para el clique de 7 nodos (0-6)
+        for (int i = 0; i < 7; i++) {
+            for (int j = i + 1; j < 7; j++) {
+                grafoSeisKerbosch.addEdge(i, j);
+            }
+        }
+        // Ahora, agregamos conexiones adicionales para alcanzar un total de 50 aristas
+        // Estas conexiones pueden ser entre nodos del clique o entre nodos del clique y nodos externos
+        // Aquí añadimos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
+        grafoSeisKerbosch.addEdge(0, 8);
+        grafoSeisKerbosch.addEdge(0, 9);
+        grafoSeisKerbosch.addEdge(0, 10);
+        grafoSeisKerbosch.addEdge(0, 11);
+        grafoSeisKerbosch.addEdge(0, 12);
+        grafoSeisKerbosch.addEdge(0, 13);
+        grafoSeisKerbosch.addEdge(0, 14);
+        grafoSeisKerbosch.addEdge(1, 8);
+        grafoSeisKerbosch.addEdge(1, 9);
+        grafoSeisKerbosch.addEdge(1, 10);
+        grafoSeisKerbosch.addEdge(1, 11);
+        grafoSeisKerbosch.addEdge(1, 12);
+        grafoSeisKerbosch.addEdge(1, 13);
+        grafoSeisKerbosch.addEdge(1, 14);
+        grafoSeisKerbosch.addEdge(2, 8);
+        grafoSeisKerbosch.addEdge(2, 9);
+        grafoSeisKerbosch.addEdge(2, 10);
+        grafoSeisKerbosch.addEdge(2, 11);
+        grafoSeisKerbosch.addEdge(2, 12);
+        grafoSeisKerbosch.addEdge(2, 13);
+        grafoSeisKerbosch.addEdge(2, 14);
+        grafoSeisKerbosch.addEdge(3, 8);
+        grafoSeisKerbosch.addEdge(3, 9);
+        grafoSeisKerbosch.addEdge(3, 10);
+        grafoSeisKerbosch.addEdge(3, 11);
+        grafoSeisKerbosch.addEdge(3, 12);
+        grafoSeisKerbosch.addEdge(3, 13);
+        grafoSeisKerbosch.addEdge(3, 14);
+        grafoSeisKerbosch.addEdge(4, 8);
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6] - Resultado Correcto
+        BronKerboschMaxClique.bronKerbosch(grafoSeisKerbosch);
+        System.out.println("Clique Máximo del sexto ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        GraphKerbosch grafoSieteKerbosch = new GraphKerbosch(20);
+        // En este momento se ejecutaran 20 vertices con 80 aristas
+        // Agregando conexiones para el clique de 13 nodos (0-12)
+        for (int i = 0; i < 13; i++) {
+            for (int j = i + 1; j < 13; j++) {
+                grafoSieteKerbosch.addEdge(i, j);
+            }
+        }
+        // Ahora, agregamos conexiones adicionales para alcanzar un total de 80 aristas
+        // Aquí agregamos conexiones entre nodos del clique y algunos nodos externos para diversificar el grafo
+        grafoSieteKerbosch.addEdge(13, 14);
+        grafoSieteKerbosch.addEdge(18, 15);
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] - Resultado Correcto
+        BronKerboschMaxClique.bronKerbosch(grafoSieteKerbosch);
+        System.out.println("Clique Máximo del Septimo ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        // Octava Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutaran 40 vertices con 120 aristas
+        // Agregando conexiones para el clique de 15 nodos (0-14)
+        GraphKerbosch grafoOchoKerbosch = new GraphKerbosch(40);
+        for (int i = 0; i < 15; i++) {
+            for (int j = i + 1; j < 15; j++) {
+                grafoOchoKerbosch.addEdge(i, j);
+            }
+        }
+        // En este momento tenemos un clique de 15 nodos (0-14) con 105 aristas
+        // Ahora, agregamos conexiones adicionales para alcanzar un total de 120 aristas
+        grafoOchoKerbosch.addEdge(15, 16);
+        grafoOchoKerbosch.addEdge(15, 17);
+        grafoOchoKerbosch.addEdge(15, 18);
+        grafoOchoKerbosch.addEdge(15, 19);
+        grafoOchoKerbosch.addEdge(16, 17);
+        grafoOchoKerbosch.addEdge(16, 18);
+        grafoOchoKerbosch.addEdge(16, 19);
+        grafoOchoKerbosch.addEdge(17, 18);
+        grafoOchoKerbosch.addEdge(17, 19);
+        grafoOchoKerbosch.addEdge(18, 19);
+        grafoOchoKerbosch.addEdge(19, 20);
+        grafoOchoKerbosch.addEdge(19, 21);
+        grafoOchoKerbosch.addEdge(19, 22);
+        grafoOchoKerbosch.addEdge(19, 23);
+        grafoOchoKerbosch.addEdge(19, 24);
+        // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
+        BronKerboschMaxClique.bronKerbosch(grafoOchoKerbosch);
+        System.out.println("Clique Máximo del Octava ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        // Novena Prueba del Proyecto Analisis de Algoritmos
+        // En este momento se ejecutan 60 vertices con 240 aristas
+        // Agregando Conexiones para el clique de 20 nodos (19-39)
+        GraphKerbosch grafoNueveKerbosch = new GraphKerbosch(60);
+        for (int i = 19; i < 41; i++) {
+            for (int j = i + 1; j < 41; j++) {
+                grafoNueveKerbosch.addEdge(i, j);
+            }
+        }
+        // En este momento tenemos un clique de 22 nodos con 231 aristas
+        //Ahora agregamos las conexiones restantes 240 - 231 = 9
+        grafoNueveKerbosch.addEdge(3, 6);
+        grafoNueveKerbosch.addEdge(5, 8);
+        grafoNueveKerbosch.addEdge(12, 17);
+        grafoNueveKerbosch.addEdge(10, 14);
+        grafoNueveKerbosch.addEdge(44, 53);
+        grafoNueveKerbosch.addEdge(45, 58);
+        grafoNueveKerbosch.addEdge(48, 57);
+        grafoNueveKerbosch.addEdge(47, 59);
+        grafoNueveKerbosch.addEdge(46, 51);
+
+        BronKerboschMaxClique.bronKerbosch(grafoNueveKerbosch);
+        System.out.println("Clique Máximo del novena ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+        // Forzar a que se limpie el clique máximo
+        BronKerboschMaxClique.maxCliqueKersboch.clear();
+
+        // Decima Prueba del Proyecto Analisis de Algoritmos
+        //En este momento se realizan 80 Vertices con 400 aristas
+        // Vamos elegir un clique en este grafo de 28 nodos el cual tendra 378 aristas
+        GraphKerbosch grafoDiezKerbosch = new GraphKerbosch(80);
+        for (int i = 10; i < 39; i++) {
+            for (int j = i + 1; j < 39; j++) {
+                grafoDiezKerbosch.addEdge(i, j);
+            }
+        }
+        // En este momento tenemos un clique de 28 nodos con 378 aristas
+        // Ahora agregamos los nodos restantes 400 - 378 = 22
+        grafoDiezKerbosch.addEdge(0, 2);
+        grafoDiezKerbosch.addEdge(3, 8);
+        grafoDiezKerbosch.addEdge(4, 9);
+        grafoDiezKerbosch.addEdge(6, 7);
+        grafoDiezKerbosch.addEdge(1, 5);
+        grafoDiezKerbosch.addEdge(40, 45);
+        grafoDiezKerbosch.addEdge(41, 46);
+        grafoDiezKerbosch.addEdge(42, 50);
+        grafoDiezKerbosch.addEdge(43, 55);
+        grafoDiezKerbosch.addEdge(44, 49);
+        grafoDiezKerbosch.addEdge(51, 58);
+        grafoDiezKerbosch.addEdge(52, 59);
+        grafoDiezKerbosch.addEdge(60, 65);
+        grafoDiezKerbosch.addEdge(61, 70);
+        grafoDiezKerbosch.addEdge(62, 66);
+        grafoDiezKerbosch.addEdge(63, 67);
+        grafoDiezKerbosch.addEdge(64, 68);
+        grafoDiezKerbosch.addEdge(69, 75);
+        grafoDiezKerbosch.addEdge(71, 76);  
+        grafoDiezKerbosch.addEdge(72, 77);
+        grafoDiezKerbosch.addEdge(73, 78);
+        grafoDiezKerbosch.addEdge(74, 79);
+        BronKerboschMaxClique.bronKerbosch(grafoDiezKerbosch);
+        System.out.println("Clique Máximo del decima ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+
+    //--------------------------------------------------------------------------------------------------------------
     }
 }
