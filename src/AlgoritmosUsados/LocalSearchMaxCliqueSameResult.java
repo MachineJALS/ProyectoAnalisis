@@ -1,3 +1,4 @@
+package AlgoritmosUsados;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -62,7 +63,7 @@ public class LocalSearchMaxCliqueSameResult {
 
 
     // Clase Graph (simplificada)
-    static class Graph {
+    static public class Graph {
         private int cantidadDeVertices;
         private boolean[][] adjacencyMatrix;
 
@@ -129,7 +130,7 @@ public class LocalSearchMaxCliqueSameResult {
 
         // Encontrar el clique máximo
         maxClique = localSearchMaxClique(grafoDos);
-        System.out.println("Clique Máximo del Segundo Ejercicio ejercicio: " + maxClique);
+        System.out.println("Clique Máximo del Segundo ejercicio: " + maxClique);
 
         // Tercera Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutaran 20 vertices con 20 aristas
@@ -167,7 +168,40 @@ public class LocalSearchMaxCliqueSameResult {
         grafoTres.agregarConexion(8, 9);
 
         maxClique = localSearchMaxClique(grafoTres);
-        System.out.println("Clique Máximo del Segundo Ejercicio ejercicio: " + maxClique);
+        System.out.println("Clique Máximo del tercer ejercicio: " + maxClique);
+        // Resultado esperado = [0,1,2,3,4] - Funcionó correctamente
 
+        //Cuarta Prueba del Proyecto Analisis de Algoritmos
+
+        Graph grafoCuatro = new Graph(0);
+
+
+        // Quinta Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoCinco = new Graph(0);
+
+
+
+        // Sexta Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoSeis = new Graph(0);
+
+
+
+        // Séptima Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoSiete = new Graph(0);
+
+
+
+        // Octava Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoOcho = new Graph(0);
+
+
+
+        // Novena Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoNueve = new Graph(0);
+
+
+
+        // Décima Prueba del Proyecto Analisis de Algoritmos
+        Graph grafoDiez = new Graph(0);
     }
 }

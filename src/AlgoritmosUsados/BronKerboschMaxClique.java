@@ -1,3 +1,4 @@
+package AlgoritmosUsados;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.Set;
 
 public class BronKerboschMaxClique {
     
-    public static Set<Integer> bronKerbosch(Graph graph) {
+    public static Set<Integer> bronKerbosch(GraphKerbosch graph) {
         Set<Integer> clique = new HashSet<>();
         Set<Integer> candidates = new HashSet<>();
         Set<Integer> excluded = new HashSet<>();
@@ -18,10 +19,10 @@ public class BronKerboschMaxClique {
         return clique;
     }
 
-    private static void bronKerbosch(Graph graph, Set<Integer> clique, Set<Integer> candidates, Set<Integer> excluded) {
+    private static void bronKerbosch(GraphKerbosch graph, Set<Integer> clique, Set<Integer> candidates, Set<Integer> excluded) {
         if (candidates.isEmpty() && excluded.isEmpty()) {
-            if (clique.size() > maxClique.size()) {
-                maxClique = new HashSet<>(clique);
+            if (clique.size() > maxCliqueKersboch.size()) {
+                maxCliqueKersboch = new HashSet<>(clique);
             }
             return;
         }
@@ -43,11 +44,11 @@ public class BronKerboschMaxClique {
         return intersection;
     }
 
-    static class Graph {
+    static class GraphKerbosch {
         private int vertexCount;
         private List<Set<Integer>> adjacencyList;
 
-        public Graph(int vertexCount) {
+        public GraphKerbosch(int vertexCount) {
             this.vertexCount = vertexCount;
             this.adjacencyList = new ArrayList<>(vertexCount);
             for (int i = 0; i < vertexCount; i++) {
@@ -69,11 +70,11 @@ public class BronKerboschMaxClique {
         }
     }
 
-    static Set<Integer> maxClique = new HashSet<>();
+    static Set<Integer> maxCliqueKersboch = new HashSet<>();
 
     public static void main(String[] args) {
         // Crear un grafo de ejemplo
-        Graph grafoUno = new Graph(5);
+        //GraphKerbosch grafoUno = new GraphKerbosch(5);
 
         // En este momento se ejecutaran 5 vertices con 6 aristas
         // grafoUno.addEdge(0, 1);
@@ -93,7 +94,7 @@ public class BronKerboschMaxClique {
 
 
         // En este momento se ejecutaran 10 vertices con 12 aristas
-        // Graph grafoDos = new Graph(10);
+        //GraphKerbosch grafoDos = new GraphKerbosch(10);
         // grafoDos.addEdge(0, 1);
         // grafoDos.addEdge(0, 3);
         // grafoDos.addEdge(0, 4);
@@ -113,7 +114,7 @@ public class BronKerboschMaxClique {
         //Tercera prueba del proyecto de Análisis de Algoritmos
         //En este momento se ejecutarán 20 vértices con 20 aristas
 
-        Graph grafoTres = new Graph(20);
+        GraphKerbosch grafoTres = new GraphKerbosch(20);
         grafoTres.addEdge(0, 1);
         grafoTres.addEdge(0, 2);
         grafoTres.addEdge(0, 3);
@@ -136,7 +137,7 @@ public class BronKerboschMaxClique {
         grafoTres.addEdge(4, 8);
         
         bronKerbosch(grafoTres);
-        System.out.println("Clique Máximo: " + maxClique); 
+        System.out.println("Clique Máximo: " + maxCliqueKersboch); 
 
     }
 }
