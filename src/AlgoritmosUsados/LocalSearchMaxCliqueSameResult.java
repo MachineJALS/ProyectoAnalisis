@@ -10,8 +10,7 @@ public class LocalSearchMaxCliqueSameResult {
 
     public static Set<Integer> localSearchMaxClique(Graph graph) {
         //Obtenemos el tiempo de inicio
-        long startTime = System.nanoTime();
-        
+        long startTime = System.nanoTime(); a++;
         Set<Integer> candidates = new HashSet<>(); a++;
         for (int v = 0; v < graph.getCantidadDeVertices(); v++) { 
             candidates.add(v);
@@ -61,6 +60,10 @@ public class LocalSearchMaxCliqueSameResult {
         }
         System.out.println("Valor de asignaciones: " + a);
         System.out.println("Valor de comparaciones: " + c);
+
+        //Reseteamos las variables a y c
+        a = 0;
+        c = 0;
         //Obtenemos el tiempo de finalización
         long endTime = System.nanoTime();
         //Calculamos el tiempo de ejecución
