@@ -1,12 +1,16 @@
 package AlgoritmosUsados;
 import java.util.HashSet;
 import java.util.Set;
+// importamos la clase de tiempo
+import java.util.concurrent.TimeUnit;
 
 public class LocalSearchMaxCliqueSameResult {
     public static int a = 0;
     public static int c = 0;
 
     public static Set<Integer> localSearchMaxClique(Graph graph) {
+        //Obtenemos el tiempo de inicio
+        long startTime = System.nanoTime();
         
         Set<Integer> candidates = new HashSet<>(); a++;
         for (int v = 0; v < graph.getCantidadDeVertices(); v++) { 
@@ -29,14 +33,13 @@ public class LocalSearchMaxCliqueSameResult {
 
             for (int u : candidates) {
                 c++; // Sumamos 1 a la variable c por la iteración del for
+                c++; // Sumamos 1 a la variable c por la condición del if
                 if (currentClique.contains(u)) continue; // Evita agregar vértices ya presentes en el clique
-                c++; 
                 boolean isConnectedToAll = true;
                 a++; // Asignamos 1 unidad a la variable a por la creación de la variable isConnectedToAll
                 for (int w : currentClique) {
                     c++; // Sumamos 1 a la variable c por la iteración del for
                     if (!graph.tieneConexion(u, w)) {
-                        c++; // Sumamos 1 a la variable c por la condición del if
                         isConnectedToAll = false;
                         a++; // Sumamos 1 a la variable a por la asignación de false a isConnectedToAll
                         break;
@@ -58,20 +61,27 @@ public class LocalSearchMaxCliqueSameResult {
         }
         System.out.println("Valor de asignaciones: " + a);
         System.out.println("Valor de comparaciones: " + c);
+        //Obtenemos el tiempo de finalización
+        long endTime = System.nanoTime();
+        //Calculamos el tiempo de ejecución
+        long durationInNano = (endTime - startTime);
+        //Convertimos el tiempo de ejecución a milisegundos
+        long durationInSeconds = TimeUnit.NANOSECONDS.toSeconds(durationInNano);
+        //Imprimimos el tiempo de ejecución
+        System.out.println("Tiempo de ejecución: " + durationInSeconds + " segundos");
         return bestClique;
     }
 
 
     // Clase Graph (simplificada)
     static public class Graph {
+        //No hay que medir el grafo ya que es un poco diferente al otro
         private int cantidadDeVertices;
         private boolean[][] adjacencyMatrix;
 
         public Graph(int vertexCount) {
             this.cantidadDeVertices = vertexCount;
-            a++; // Sumamos 1 a la variable a por la creación de la variable cantidadDeVertices
             this.adjacencyMatrix = new boolean[vertexCount][vertexCount];
-            a++; // Sumamos 1 a la variable a por la creación de la variable adjacencyMatrix
         }
 
         public int getCantidadDeVertices() {
@@ -84,9 +94,7 @@ public class LocalSearchMaxCliqueSameResult {
 
         public void agregarConexion(int u, int v) {
             adjacencyMatrix[u][v] = true;
-            a++; // Sumamos 1 a la variable a por la asignación de true a adjacencyMatrix[u][v] 
             adjacencyMatrix[v][u] = true;
-            a++; // Sumamos 1 a la variable a por la asignación de true a adjacencyMatrix[v][u]
         }
     }
 }

@@ -3,12 +3,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+// importamos la clase de tiempo
+import java.util.concurrent.TimeUnit;
 //TODO implementar las asignaciones y comparaciones en el algoritmo de BronKerbosch ademas
 //TODO Que se puedan buscar cliques sin necesidad de comentar los anteriores grafos
 
 public class BronKerboschMaxClique {
     
     public static Set<Integer> bronKerbosch(GraphKerbosch graph) {
+        //Obtenemos el tiempo de inicio
+        long startTime = System.nanoTime();
         Set<Integer> clique = new HashSet<>();
         Set<Integer> candidates = new HashSet<>();
         Set<Integer> excluded = new HashSet<>();
@@ -16,6 +20,15 @@ public class BronKerboschMaxClique {
             candidates.add(v);
         }
         bronKerbosch(graph, clique, candidates, excluded);
+        //Obtenemos el tiempo de fin
+        long endTime = System.nanoTime();
+        //Calculamos el tiempo de ejecución
+        long durationInNano = (endTime - startTime);
+        //Convertimos el tiempo de ejecución a milisegundos
+        long durationInSeconds = TimeUnit.NANOSECONDS.toSeconds(durationInNano);
+        //Imprimimos el tiempo de ejecución
+        System.out.println("Tiempo de ejecución: " + durationInSeconds + " segundos");
+
         return clique;
     }
 
