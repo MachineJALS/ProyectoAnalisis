@@ -7,8 +7,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class BronKerboschMaxClique {
-    public static int a = 0;
-    public static int c = 0;
+    public static long a = 0;
+    public static long c = 0;
     
     public static Set<Integer> bronKerbosch(GraphKerbosch graph) {
         //Obtenemos el tiempo de inicio

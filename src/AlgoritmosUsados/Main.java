@@ -555,10 +555,9 @@ public class Main {
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
         BronKerboschMaxClique.bronKerbosch(grafoOchoKerbosch);
         System.out.println("Clique Máximo del Octava ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
-
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
-
+        
         // Novena Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutan 60 vertices con 240 aristas
         // Agregando Conexiones para el clique de 20 nodos (19-39)
@@ -579,10 +578,8 @@ public class Main {
         grafoNueveKerbosch.addEdge(48, 57);
         grafoNueveKerbosch.addEdge(47, 59);
         grafoNueveKerbosch.addEdge(46, 51);
-
         BronKerboschMaxClique.bronKerbosch(grafoNueveKerbosch);
         System.out.println("Clique Máximo del novena ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
-
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
 
