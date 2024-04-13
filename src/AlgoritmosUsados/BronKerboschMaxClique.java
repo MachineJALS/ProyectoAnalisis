@@ -20,7 +20,6 @@ public class BronKerboschMaxClique {
         for (int v = 0; v < graph.getVertexCount(); v++) {
             a+=3; // Asignamos 3 unidades a la variable a por v=0, v++, candidates.add(v)
             candidates.add(v);
-            c++; // Sumamos 1 a la variable c por la iteración del for
         }
         c++; // Sumamos 1 a la variable c por la iteración del for falsa
 
@@ -60,7 +59,6 @@ public class BronKerboschMaxClique {
         List<Integer> candidatesList = new ArrayList<>(candidates);
         a++; // Sumamos 1 a la variable a por la creación de candidatesList
         for (Integer v : candidatesList) {
-            c++; // Sumamos 1 a la variable c por la iteración del for
             Set<Integer> neighbors = graph.getNeighbors(v);
             a++; // Sumamos 1 a la variable a por la creación de neighbors
             Set<Integer> newClique = new HashSet<>(clique);

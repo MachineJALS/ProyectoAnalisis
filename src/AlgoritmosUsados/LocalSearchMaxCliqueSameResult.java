@@ -11,7 +11,7 @@ public class LocalSearchMaxCliqueSameResult {
 
     public static Set<Integer> localSearchMaxClique(Graph graph) {
         //Obtenemos el tiempo de inicio
-        long startTime = System.nanoTime(); a++; lineasEjecutadas++;
+        long startTime = System.nanoTime(); a++;
         Set<Integer> candidates = new HashSet<>(); a++; ;
         for (int v = 0; v < graph.getCantidadDeVertices(); v++) { 
             candidates.add(v); 
@@ -25,32 +25,29 @@ public class LocalSearchMaxCliqueSameResult {
         Set<Integer> bestClique = null; a++; 
 
         for (int v : candidates) {
-            c++; // Sumamos 1 a la variable c por la iteración del for
             Set<Integer> currentClique = new HashSet<>(); 
             currentClique.add(v);
             a+=2; // Asignamos 2 unidades por la creación de la variable currentClique y la adición de v a currentClique
 
 
             for (int u : candidates) {
-                c++; // Sumamos 1 a la variable c por la iteración del for
                 c++; // Sumamos 1 a la variable c por la condición del if
                 if (currentClique.contains(u)) continue; // Evita agregar vértices ya presentes en el clique
                 boolean isConnectedToAll = true;
                 a++; // Asignamos 1 unidad a la variable a por la creación de la variable isConnectedToAll
                 for (int w : currentClique) {
-                    c++; // Sumamos 1 a la variable c por la iteración del for
+                    c++; // Sumamos 1 a la variable c por la condición del if
                     if (!graph.tieneConexion(u, w)) {
                         isConnectedToAll = false;
                         a++; // Sumamos 1 a la variable a por la asignación de false a isConnectedToAll
                         break;
                     }
-                    c++; // sumamos uno por la comparación falsa del if
                 }
                 if (isConnectedToAll) {
                     c++; // Sumamos 1 a la variable c por la condición del if
                     currentClique.add(u);
                     a++; // Sumamos 1 a la variable a por la adición de u a currentClique
-                }
+                } c++; // Sumamos 1 a la variable c por la condición del if
             }
 
             if (bestClique == null || bestClique.size() < currentClique.size()) {
