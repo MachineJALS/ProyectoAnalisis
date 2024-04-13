@@ -557,7 +557,7 @@ public class Main {
         System.out.println("Clique Máximo del Octava ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
-        
+            
         // Novena Prueba del Proyecto Analisis de Algoritmos
         // En este momento se ejecutan 60 vertices con 240 aristas
         // Agregando Conexiones para el clique de 20 nodos (19-39)

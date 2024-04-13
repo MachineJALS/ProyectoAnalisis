@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class BronKerboschMaxClique {
     public static long a = 0;
     public static long c = 0;
+    public static long lineasEjecutadas = 0;
     
     public static Set<Integer> bronKerbosch(GraphKerbosch graph) {
         //Obtenemos el tiempo de inicio
@@ -33,12 +34,14 @@ public class BronKerboschMaxClique {
         //Imprimimos el tiempo de ejecución
         System.out.println("Tiempo de ejecución: " + durationInMillis + " ms");
 
-
+        lineasEjecutadas = a + c;
+        System.out.println("Valor de lineas ejecutadas: " + lineasEjecutadas);
         System.out.println("Valor de asignaciones: " + a);
         System.out.println("Valor de comparaciones: " + c);
-        //Reseteamos las variables a y c
+        //Reseteamos las variables a, c y lineasEjecutadas
         a = 0;
         c = 0;
+        lineasEjecutadas = 0;
         return clique;
     }
 

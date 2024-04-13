@@ -7,13 +7,14 @@ import java.util.concurrent.TimeUnit;
 public class LocalSearchMaxCliqueSameResult {
     public static int a = 0;
     public static int c = 0;
+    public static long lineasEjecutadas = 0;
 
     public static Set<Integer> localSearchMaxClique(Graph graph) {
         //Obtenemos el tiempo de inicio
-        long startTime = System.nanoTime(); a++;
-        Set<Integer> candidates = new HashSet<>(); a++;
+        long startTime = System.nanoTime(); a++; lineasEjecutadas++;
+        Set<Integer> candidates = new HashSet<>(); a++; ;
         for (int v = 0; v < graph.getCantidadDeVertices(); v++) { 
-            candidates.add(v);
+            candidates.add(v); 
             a+=3; // Asignamos 3 unidades a la variable a por v=0, v++, candidates.add(v)
             c++; // Sumamos 1 a la variable c por la iteración del for
         }
@@ -21,7 +22,7 @@ public class LocalSearchMaxCliqueSameResult {
 
 
 
-        Set<Integer> bestClique = null; a++;
+        Set<Integer> bestClique = null; a++; 
 
         for (int v : candidates) {
             c++; // Sumamos 1 a la variable c por la iteración del for
@@ -58,12 +59,15 @@ public class LocalSearchMaxCliqueSameResult {
                 a++; // Sumamos 1 a la variable a por la asignación de currentClique a bestClique
             }
         }
+        lineasEjecutadas = a + c;
         System.out.println("Valor de asignaciones: " + a);
         System.out.println("Valor de comparaciones: " + c);
+        System.out.println("Valor de lineas ejecutadas: " + lineasEjecutadas);
 
-        //Reseteamos las variables a y c
+        //Reseteamos las variables a , c y lineasEjecutadas
         a = 0;
         c = 0;
+        lineasEjecutadas = 0;
         //Obtenemos el tiempo de finalización
         long endTime = System.nanoTime();
         //Calculamos el tiempo de ejecución
