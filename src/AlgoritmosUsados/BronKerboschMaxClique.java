@@ -20,6 +20,7 @@ public class BronKerboschMaxClique {
         for (int v = 0; v < graph.getVertexCount(); v++) {
             a+=3; // Asignamos 3 unidades a la variable a por v=0, v++, candidates.add(v)
             candidates.add(v);
+            c++; // Sumamos 1 a la variable c por la iteración del for
         }
         c++; // Sumamos 1 a la variable c por la iteración del for falsa
 
