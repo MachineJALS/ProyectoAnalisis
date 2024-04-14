@@ -554,7 +554,7 @@ public class Main {
         grafoOchoKerbosch.addEdge(19, 24);
         // Se espera un clique de [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] - Resultado Correcto
         BronKerboschMaxClique.bronKerbosch(grafoOchoKerbosch);
-        System.out.println("Clique Máximo del Octava ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+        System.out.println("Clique Máximo del Octavo ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
             
@@ -579,7 +579,7 @@ public class Main {
         grafoNueveKerbosch.addEdge(47, 59);
         grafoNueveKerbosch.addEdge(46, 51);
         BronKerboschMaxClique.bronKerbosch(grafoNueveKerbosch);
-        System.out.println("Clique Máximo del novena ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+        System.out.println("Clique Máximo del noveno ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
 
@@ -617,7 +617,7 @@ public class Main {
         grafoDiezKerbosch.addEdge(73, 78);
         grafoDiezKerbosch.addEdge(74, 79);
         BronKerboschMaxClique.bronKerbosch(grafoDiezKerbosch);
-        System.out.println("Clique Máximo del decima ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
+        System.out.println("Clique Máximo del decimo ejercicio de Bron - Kersboch " + BronKerboschMaxClique.maxCliqueKersboch);
     //--------------------------------------------------------------------------------------------------------------
     }
 }
