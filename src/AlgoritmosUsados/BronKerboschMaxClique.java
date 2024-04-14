@@ -10,8 +10,8 @@ public class BronKerboschMaxClique {
     public static long a = 0;
     public static long c = 0;
     public static long lineasEjecutadas = 0;
-    
     public static Set<Integer> bronKerbosch(GraphKerbosch graph) {
+        a++;
         //Obtenemos el tiempo de inicio
         long startTime = System.nanoTime();
         Set<Integer> clique = new HashSet<>(); a++;
