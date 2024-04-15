@@ -332,6 +332,7 @@ public class Main {
         // Forzar a que se limpie el clique máximo
         BronKerboschMaxClique.maxCliqueKersboch.clear();
 
+        // En este momento se ejecutaran 10 vertices con 12 aristas
         GraphKerbosch grafoDosKerbosch = new GraphKerbosch(10);
         grafoDosKerbosch.addEdge(0, 1);
         grafoDosKerbosch.addEdge(0, 3);
@@ -586,7 +587,7 @@ public class Main {
         BronKerboschMaxClique.maxCliqueKersboch.clear();
 
         // Decima Prueba del Proyecto Analisis de Algoritmos
-        //En este momento se realizan 80 Vertices con 400 aristas
+        // En este momento se realizan 80 Vertices con 400 aristas
         // Vamos elegir un clique en este grafo de 28 nodos el cual tendra 378 aristas
         GraphKerbosch grafoDiezKerbosch = new GraphKerbosch(80);
         for (int i = 10; i < 39; i++) {
